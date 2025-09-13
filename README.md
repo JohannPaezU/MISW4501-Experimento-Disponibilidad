@@ -24,6 +24,7 @@ Este repositorio contiene la solución al experimento de disponibilidad del curs
   - [📋 Pruebas manuales con Postman](#-pruebas-manuales-con-postman)
   - [⚡ Pruebas de carga automatizadas](#-pruebas-de-carga-automatizadas)
 - [🐛 Troubleshooting](#-troubleshooting)
+- [🎥 Análisis y demostración del experimento](#-análisis-y-demostración-del-experimento)
 - [📊 Conclusiones](#-conclusiones)
 
 ## ✅ Prerrequisitos
@@ -438,6 +439,9 @@ El script de pruebas proporciona métricas detalladas:
     "orders_availability": [...]
 }
 ```
+
+## 🎥 Análisis y demostración del experimento
+
 
 ## 📊 Conclusiones
 
