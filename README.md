@@ -266,6 +266,7 @@ EXPECTED_AVAILABILITY=90
 
 **Evidencias**:
 - **Configuración inicial del sistema**: Establecimiento de las variables de entorno con 70% de disponibilidad simulada y 90% de umbral esperado.
+  
   ![Configuración inicial](./assets/manual/manual_11.png)
 - **Verificación de salud del servicio**: Confirmación de que el Monitor API está operativo antes de iniciar las pruebas.
   ![Health check](./assets/manual/manual_12.png)
@@ -297,10 +298,11 @@ EXPECTED_AVAILABILITY=80
 
 **Evidencias**:
 - **Configuración inicial del sistema**: Establecimiento de las variables de entorno con 90% de disponibilidad simulada y 80% de umbral esperado.
+  
   ![Configuración inicial](./assets/manual/manual_21.png)
 - **Primera petición de verificación**: Encolamiento de la primera solicitud de monitoreo de disponibilidad para el escenario de alta disponibilidad.
   ![Primera petición](./assets/manual/manual_22.png)
-- **Primer resultado obtenido**: Consulta del estado inicial que muestra la primera medición exitosa de disponibilidad.
+- **Primer resultado obtenido**: Consulta del estado inicial que muestra la primera medición de disponibilidad.
   ![Primer resultado](./assets/manual/manual_23.png)
 - **Envío de peticiones adicionales**: Proceso de envío de las 9 peticiones restantes para completar el conjunto de 10 mediciones.
   ![Envio peticiones](./assets/manual/manual_24.png)
@@ -354,6 +356,7 @@ REQUESTS_PER_THREAD=10
 
 **Evidencias**:
 - **Configuración inicial del entorno**: Establecimiento de variables de entorno para simular 70% de disponibilidad con umbral de 90%.
+  
   ![Configuración inicial](./assets/load/load_11.png)
 - **Configuración de carga del script**: Definición de parámetros de concurrencia (50 hilos, 10 peticiones por hilo) para generar 500 peticiones totales.
   ![Configuración de carga](./assets/load/load_12.png)
@@ -387,6 +390,7 @@ REQUESTS_PER_THREAD=10
 
 **Evidencias**:
 - **Configuración inicial del entorno**: Establecimiento de variables de entorno para simular 90% de disponibilidad con umbral de 80%.
+  
   ![Configuración inicial](./assets/load/load_21.png)
 - **Configuración de carga del script**: Definición de parámetros de concurrencia (50 hilos, 10 peticiones por hilo) para el escenario de alta disponibilidad.
   ![Configuración de carga](./assets/load/load_22.png)
