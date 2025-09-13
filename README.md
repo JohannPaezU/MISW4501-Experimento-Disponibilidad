@@ -13,12 +13,12 @@ Este repositorio contiene la solución al experimento de disponibilidad del curs
 
 ## 📋 Tabla de contenidos
 - [✅ Prerrequisitos](#-prerrequisitos)
-- [🛠️ Tecnologías y herramientas utilizadas](#-tecnologías-y-herramientas-utilizadas)
+- [🛠️ Tecnologías y herramientas utilizadas](#️-tecnologías-y-herramientas-utilizadas)
 - [📁 Estructura del proyecto](#-estructura-del-proyecto)
 - [🐳 Docker Compose](#-docker-compose)
 - [🌐 URLs de los servicios](#-urls-de-los-servicios)
 - [📁 Arquitectura de servicios](#-arquitectura-de-servicios)
-- [⚙️ Configuración](#-configuración)
+- [⚙️ Configuración](#️-configuración)
 - [🔄 Flujo de comunicación](#-flujo-de-comunicación)
 - [🧪 Pruebas para revisar la disponibilidad](#-pruebas-para-revisar-la-disponibilidad)
   - [📋 Pruebas manuales con Postman](#-pruebas-manuales-con-postman)
