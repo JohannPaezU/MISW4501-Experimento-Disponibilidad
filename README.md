@@ -50,11 +50,16 @@ Para poder utilizar este proyecto necesitas:
 ```
 📦 MISW4501-Experimento-Disponibilidad
 │   .gitignore
+│   .env.template
 │   docker-compose.yml
 │   LICENSE
 │   README.md
 │   requirements.txt
 │   test_monitor.py
+│   MISW4501 Experimento Disponibilidad.postman_collection.json
+├───assets/
+│   ├───load/
+│   └───manual/
 ├───monitor/
 │   │   __init__.py
 │   │   app.py
@@ -77,7 +82,10 @@ Para poder utilizar este proyecto necesitas:
 | **Order Manager** | Microservicio que simula un gestor de pedidos con disponibilidad configurable y reporta su estado |
 | **Redis** | Broker de mensajes para Celery y almacén de datos para métricas de disponibilidad |
 | **Test Monitor** | Script de pruebas de carga concurrente para validar la disponibilidad del sistema |
-| requirements.txt | Archivo donde se detallan las dependencias necesarias para ejecutar el proyecto |
+| **Assets** | Carpeta que contiene las evidencias de las pruebas manuales y de carga |
+| [requirements.txt](./requirements.txt) | Archivo donde se detallan las dependencias necesarias para ejecutar el proyecto |
+| [.env.template](./.env.template) | Plantilla de variables de entorno para configurar el sistema |
+| [Colección Postman](./MISW4501%20Experimento%20Disponibilidad.postman_collection.json) | Colección de Postman con todas las peticiones para pruebas manuales |
 
 ## 🐳 Docker Compose
 
@@ -127,7 +135,7 @@ La arquitectura del sistema de monitoreo de disponibilidad está compuesta por l
 
 ### Variables de entorno (`.env`)
 
-Los servicios utilizan las siguientes variables de entorno:
+Los servicios utilizan las siguientes variables de entorno. Crea un archivo `.env` basado en [`.env.template`](./.env.template):
 
 ```properties
 # Configuración de Redis/Celery
@@ -220,8 +228,8 @@ Las pruebas manuales se realizan utilizando Postman para verificar el comportami
 
 #### Configuración inicial
 
-1. **Importar la colección**: Utiliza el archivo `MISW4501 Experimento Disponibilidad.postman_collection.json` incluido en el repositorio
-2. **Configurar variables de entorno** en el archivo `.env`:
+1. **Importar la colección**: Utiliza el archivo [`MISW4501 Experimento Disponibilidad.postman_collection.json`](./MISW4501%20Experimento%20Disponibilidad.postman_collection.json) incluido en el repositorio
+2. **Configurar variables de entorno** en el archivo `.env` (basado en [`.env.template`](./.env.template)):
    - Para **baja disponibilidad**: `AVAILABILITY_PERCENT=30`
    - Para **alta disponibilidad**: `AVAILABILITY_PERCENT=95`
 3. **Reiniciar servicios**: `docker-compose down && docker-compose up -d`
@@ -296,7 +304,7 @@ EXPECTED_AVAILABILITY=80
 
 ### ⚡ Pruebas de carga automatizadas
 
-Las pruebas de carga utilizan el script `test_monitor.py` para simular múltiples peticiones concurrentes y evaluar el comportamiento del sistema bajo carga.
+Las pruebas de carga utilizan el script [`test_monitor.py`](./test_monitor.py) para simular múltiples peticiones concurrentes y evaluar el comportamiento del sistema bajo carga.
 
 #### Configuración de las pruebas
 
@@ -308,6 +316,8 @@ threads_count = int(os.getenv("THREADS_COUNT", "50"))
 thread_requests = int(os.getenv("REQUESTS_PER_THREAD", "10"))
 ```
 
+Consulta el archivo completo: [`test_monitor.py`](./test_monitor.py)
+
 #### Ejecución de pruebas
 
 ```bash
@@ -317,6 +327,8 @@ pip install -r requirements.txt
 # Ejecutar el script de pruebas
 python test_monitor.py
 ```
+
+> **Nota**: Consulta [`requirements.txt`](./requirements.txt) para ver todas las dependencias necesarias.
 
 #### Prueba 1: Carga con disponibilidad insuficiente
 
