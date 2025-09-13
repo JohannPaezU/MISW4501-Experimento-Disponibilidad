@@ -81,8 +81,8 @@ Para poder utilizar este proyecto necesitas:
 | **Message Platform** | Microservicio intermediario que gestiona el enrutamiento de mensajes entre el monitor y el gestor de órdenes |
 | **Order Manager** | Microservicio que simula un gestor de pedidos con disponibilidad configurable y reporta su estado |
 | **Redis** | Broker de mensajes para Celery y almacén de datos para métricas de disponibilidad |
-| **Test Monitor** | Script de pruebas de carga concurrente para validar la disponibilidad del sistema |
 | **Assets** | Carpeta que contiene las evidencias de las pruebas manuales y de carga |
+| [Test Monitor](./test_monitor.py) | Script de pruebas de carga concurrente para validar la disponibilidad del sistema |
 | [requirements.txt](./requirements.txt) | Archivo donde se detallan las dependencias necesarias para ejecutar el proyecto |
 | [.env.template](./.env.template) | Plantilla de variables de entorno para configurar el sistema |
 | [Colección Postman](./MISW4501%20Experimento%20Disponibilidad.postman_collection.json) | Colección de Postman con todas las peticiones para pruebas manuales |
