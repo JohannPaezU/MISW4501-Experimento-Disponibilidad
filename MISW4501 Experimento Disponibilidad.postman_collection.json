@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "3e838350-9daa-41a3-b7d9-addedd59c986",
+		"name": "MISW4501 Experimento Disponibilidad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10852636"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/monitor/health",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"monitor",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Status Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/monitor/orders/status/check",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"monitor",
+						"orders",
+						"status",
+						"check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/monitor/orders/status",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"monitor",
+						"orders",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Order Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/monitor/orders/status/reset",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"monitor",
+						"orders",
+						"status",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": ""
+		}
+	]
+}

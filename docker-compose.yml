@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7
+    container_name: redis_broker
+    ports:
+      - "${REDIS_PORT}:6379"
+
+  monitor_api:
+    build:
+      context: .
+      dockerfile: monitor/Dockerfile
+    container_name: monitor_api
+    env_file:
+      - ./.env
+    ports:
+      - "${MONITOR_PORT}:5000"
+    depends_on:
+      - redis
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
+
+  monitor_worker:
+    build:
+      context: .
+      dockerfile: monitor/Dockerfile
+    container_name: monitor_worker
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+    command: ["celery", "-A", "app.celery", "worker", "--loglevel=info", "-Q", "monitor"]
+
+  message_platform_worker:
+    build:
+      context: .
+      dockerfile: message_platform/Dockerfile
+    container_name: message_platform_worker
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+    command: ["celery", "-A", "app.celery", "worker", "--loglevel=info", "-Q", "platform"]
+
+  order_manager_worker:
+    build:
+      context: .
+      dockerfile: order_manager/Dockerfile
+    container_name: order_manager_worker
+    env_file:
+      - ./.env
+    depends_on:
+      - redis
+    command: ["celery", "-A", "app.celery", "worker", "--loglevel=info", "-Q", "orders"]
+
+networks:
+  default:
+    driver: bridge
