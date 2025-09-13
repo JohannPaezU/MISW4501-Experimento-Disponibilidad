@@ -125,11 +125,18 @@ docker-compose down
 
 ## 📁 Arquitectura de servicios
 
-La arquitectura del sistema de monitoreo de disponibilidad está compuesta por los siguientes componentes que se comunican de forma asíncrona a través de colas de mensajes:
+![Arquitectura del Sistema de Monitoreo de Disponibilidad](./assets/architecture-diagram.png)
 
-![Arquitectura del Sistema de Monitoreo de Disponibilidad](/assets/architecture-diagram.png)
+El diagrama muestra la arquitectura distribuida del sistema compuesta por los siguientes componentes principales:
 
-*Diagrama que muestra el flujo de comunicación entre los microservicios: Cliente → Monitor API → Message Platform → Order Manager → Monitor Worker → Redis*
+- **Cliente**: Inicia las solicitudes de verificación de disponibilidad
+- **Monitor API**: Punto de entrada REST que recibe las peticiones y consulta métricas
+- **Message Platform Worker**: Intermediario que enruta mensajes entre servicios
+- **Order Manager Worker**: Simula el gestor de pedidos y genera métricas de disponibilidad
+- **Monitor Worker**: Procesa callbacks y almacena métricas de disponibilidad
+- **Redis**: Actúa como broker de mensajes y almacén persistente de datos
+
+La comunicación entre componentes se realiza mediante colas de mensajes asíncronas, garantizando el desacoplamiento y la escalabilidad del sistema.
 
 ## ⚙️ Configuración
 
