@@ -442,7 +442,7 @@ El script de pruebas proporciona métricas detalladas:
 
 ## 🎥 Análisis y demostración del experimento
 
-<iframe src="https://drive.google.com/file/d/1s4MGGqIS8E7MKn1J5UEBFvMrzQ3f6v7W/preview" width="640" height="480" allow="autoplay"></iframe>
+[Video del Experimento Realizado](https://drive.google.com/file/d/1s4MGGqIS8E7MKn1J5UEBFvMrzQ3f6v7W/view?usp=drive_link)
 
 ## 📊 Conclusiones
 
